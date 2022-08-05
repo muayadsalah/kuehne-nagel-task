@@ -11,23 +11,29 @@
   - Other CRUD operations are not in the scope of this assignment, but they should be straight-forward to implement at the backend.
 - I used `Angular 14` + `Angular Material` for UI components, to give pretty and clean UI/UX
 
-## How to run
+
+## How to run the application?
+
+---
+
 
 ### BE
+#### Prerequisites:
+- **JDK** 17
 
-- Prerequisites: `JDK 17`
-
-    > Go to `contactlist-server` directory from Command Line
-    > - Run `./mvnw spring-boot:run`
-
+#### Running Backend:
+> Go to `contactlist-server` directory from Command Line
+> - Run `./mvnw spring-boot:run`
+---
 ### FE
 
-  - Prerequisites:
-    - **NPM** - v8.5.5
-    - **Node** - v16.15.0
-    - **Angular CLI** - v14.1.1
+#### Prerequisites:
+- **NPM** - v8.5.5
+- **Node** - v16.15.0
+- **Angular CLI** - v14.1.1
 
-    >   Go to `contactlist-frontend` directory from Command Line
-    >  - Run `npm install`, then
-    >  - Run `ng serve`
-    >  - From browser, navigate to: `localhost:4200`
+#### Running Frontend:
+> Go to `contactlist-frontend` directory from Command Line
+>- Run `npm install`, then
+>- Run `ng serve`
+>- From browser, navigate to: `localhost:4200`
