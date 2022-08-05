@@ -15,9 +15,10 @@
 
 ### BE
 
--   Prerequisites: `JDK 17`
-    > Go to contactlist-server directory from Command Line
-    > -   Run `./mvnw spring-boot:run`
+- Prerequisites: `JDK 17`
+
+    > Go to `contactlist-server` directory from Command Line
+    > - Run `./mvnw spring-boot:run`
 
 ### FE
 
@@ -26,6 +27,7 @@
     - **Node** - v16.15.0
     - **Angular CLI** - v14.1.1
 
-    >   Go to work-orders directory from Command Line
+    >   Go to `contactlist-frontend` directory from Command Line
     >  - Run `npm install`, then
     >  - Run `ng serve`
+    >  - From browser, navigate to: `localhost:4200`
