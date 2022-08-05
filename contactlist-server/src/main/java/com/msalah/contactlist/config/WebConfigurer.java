@@ -12,6 +12,7 @@ import org.springframework.web.filter.CorsFilter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import java.util.Arrays;
 
 /**
  * Configuration of web application with Servlet 3.0 APIs.
@@ -41,7 +42,7 @@ public class WebConfigurer implements ServletContextInitializer {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.setAllowedOriginPatterns(Arrays.asList("*"));
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

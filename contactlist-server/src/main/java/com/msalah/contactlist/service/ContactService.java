@@ -4,6 +4,7 @@ import com.msalah.contactlist.domain.Contact;
 import com.msalah.contactlist.repository.ContactRepository;
 import com.msalah.contactlist.utils.FileUtils;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,11 @@ public class ContactService {
         contactRepository.saveAll(contactList);
     }
 
-    public Page<Contact> getContacts(Pageable pageable) {
-        return contactRepository.findAll(pageable);
+    public Page<Contact> getContacts(String query, Pageable pageable) {
+        if (StringUtils.isBlank(query)) {
+            return contactRepository.findAll(pageable);
+        } else {
+            return contactRepository.findByNameContainingIgnoreCase(query, pageable);
+        }
     }
-
 }
