@@ -11,11 +11,8 @@
   - Other CRUD operations are not in the scope of this assignment, but they should be straight-forward to implement at the backend.
 - I used `Angular 14` + `Angular Material` for UI components, to give pretty and clean UI/UX
 
-
-## How to run the application?
-
 ---
-
+## How to run the application?
 
 ### BE
 #### Prerequisites:
