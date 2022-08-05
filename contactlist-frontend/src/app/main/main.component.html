@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <span>Contact List</span>
+</mat-toolbar>
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults || isApiError">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="api-error" *ngIf="isApiError">
+      Could not load contact list from server. Please check what went wrong
+    </div>
+  </div>
+
+  <div class="example-table-container">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Search By Name</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Type contact name to search for..." #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="filteredData" class="example-table"
+           matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
+      <!-- Number Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Contact Name</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <!-- State Column -->
+      <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let row">
+          <img src={{row.imageUrl}} width="50" height="50" alt="Could not load image!">
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [length]="resultsLength" [pageSize]="20" aria-label="Select page of contact list"></mat-paginator>
+</div>
