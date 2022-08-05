@@ -21,7 +21,7 @@
 
 ### FE
 
--   Prerequisites: `Angular CLI`
+-   Prerequisites: `NPM, Angular CLI`
     > Go to work-orders directory from Command Line
     > -   Run `npm install`, then
     > -   Run `ng serve`
